@@ -1,0 +1,9 @@
+import SafariServices
+import PlaygroundSupport
+
+let sf = SFSafariViewController(url: URL(string: "https://www.Google.com/")!)
+sf.title = "Safari on Playground"
+
+PlaygroundPage.current.needsIndefiniteExecution = true
+PlaygroundPage.current.liveView = UINavigationController(rootViewController: sf)
+PlaygroundPage.current.wantsFullScreenLiveView = true
