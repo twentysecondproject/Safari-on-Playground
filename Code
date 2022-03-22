@@ -1,9 +1,50 @@
 import SafariServices
 import PlaygroundSupport
+import SwiftUI
 
+
+(#imageLiteral(resourceName: "Foto.png"))
 let sf = SFSafariViewController(url: URL(string: "https://www.Google.com/")!)
 sf.title = "Safari on Playground"
 
-PlaygroundPage.current.needsIndefiniteExecution = true
-PlaygroundPage.current.liveView = UINavigationController(rootViewController: sf)
 PlaygroundPage.current.wantsFullScreenLiveView = true
+PlaygroundPage.current.liveView = UINavigationController(rootViewController: sf)
+
+
+
+
+struct HistoryView: View {
+    @State var choice = 0
+    
+    
+    var options = ["Bookmarks", "ReadingList" ,"History"]
+    
+    var body: some View {
+        NavigationView{
+            VStack{
+                Picker(" ", selection: $choice) {
+                    ForEach(0 ..< options.count) {
+                        index in
+                        Text(self.options[index])
+                            .tag(index)
+                    }
+                    
+                }
+                
+                .pickerStyle(SegmentedPickerStyle())
+                Spacer()
+            }
+            .navigationBarTitle(Text("Search Details⚡️"), displayMode: .inline)
+        }
+        
+        
+    }
+    
+}
+
+struct HistoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        HistoryView()
+    }
+}
+
