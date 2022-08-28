@@ -4,7 +4,7 @@ import SwiftUI
 
 
 (#imageLiteral(resourceName: "Foto.png"))
-let sf = SFSafariViewController(url: URL(string: "https://www.Google.com/")!)
+let sf = SFSafariViewController(url: URL(string: "https://www.google.com/")!)
 sf.title = "Safari on Playground"
 
 PlaygroundPage.current.wantsFullScreenLiveView = true
@@ -34,7 +34,7 @@ struct HistoryView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 Spacer()
             }
-            .navigationBarTitle(Text("Search Details⚡️"), displayMode: .inline)
+            .navigationBarTitle(Text("Search on Safari"), displayMode: .inline)
         }
         
         
